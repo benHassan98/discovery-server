@@ -1,10 +1,6 @@
-FROM ubuntu:23.04
-
-RUN apt-get update
-
-RUN apt-get install -y curl
-
 FROM eclipse-temurin:17-jdk-alpine
+
+RUN apk --no-cache add curl
 
 COPY ./target/*.jar app.jar
 
